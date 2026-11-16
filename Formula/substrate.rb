@@ -7,20 +7,20 @@ class Substrate < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/SMC17/zinging/releases/download/v3.12.0/zig-substrate-v3.12.0-macos-aarch64.tar.gz"
-      sha256 "7c972b6bcaaee568689b4810d281f471488dcd9e8e6e51307823afada9a2e310"
+      sha256 "cfcd50a2e5d82a31bfd4cacbe912b0658abfd9c7a2bd02e541749707e1ef626f"
     else
       url "https://github.com/SMC17/zinging/releases/download/v3.12.0/zig-substrate-v3.12.0-macos-x86_64.tar.gz"
-      sha256 "3735a02a27f3a7b5b7bb97163a3fad4b8f55985dd0fa3b52c1f37641a41811ce"
+      sha256 "4a1fc39b1cb2f484d5452651971b699581df003a8ff6bf750adb195d7bf9601f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/SMC17/zinging/releases/download/v3.12.0/zig-substrate-v3.12.0-linux-aarch64.tar.gz"
-      sha256 "28ed47dd148e3fdeb9bcce515340ce5b1f12b23c1e8949da59a70d4bb7776929"
+      sha256 "14cab29ec7f11117e88587225d7540bd6b799c3b1b73e774166b3ac19ae77c9f"
     else
       url "https://github.com/SMC17/zinging/releases/download/v3.12.0/zig-substrate-v3.12.0-linux-x86_64.tar.gz"
-      sha256 "b9654eee38ef08bd8cd3960799850c747cdf1ebfc3cd945d8d9322eb75bf3cea"
+      sha256 "63d927308940917847615107580550e4896d307194dcc218764e87f852c9e46d"
     end
   end
 
@@ -32,5 +32,6 @@ class Substrate < Formula
 
   test do
     assert_match "zig-substrate", shell_output("#{bin}/substrate version")
+    assert_match "zig-substrate", pipe_output("#{bin}/substrate mcp", "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\"}\n")
   end
 end
