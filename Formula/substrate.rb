@@ -10,7 +10,7 @@ class Substrate < Formula
       sha256 "7c972b6bcaaee568689b4810d281f471488dcd9e8e6e51307823afada9a2e310"
     else
       url "https://github.com/SMC17/zinging/releases/download/v3.12.0/zig-substrate-v3.12.0-macos-x86_64.tar.gz"
-      sha256 "3735a02a27f3a7b5b7bb97163a3fad4b8f55985dd0fa3b52c1e6e51307823af"
+      sha256 "3735a02a27f3a7b5b7bb97163a3fad4b8f55985dd0fa3b52c1f37641a41811ce"
     end
   end
 
